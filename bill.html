@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bill Preview</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="brand">
+        <h1>Neighborhood Grocery</h1>
+        <p class="tagline">Final bill preview page — print-ready layout</p>
+        <nav class="site-nav no-print" aria-label="Pages">
+          <a href="/" class="nav-link">Items</a>
+          <a href="/bill.html" class="nav-link nav-link-current" aria-current="page">Bill preview</a>
+        </nav>
+      </div>
+    </header>
+    <main class="bill-page">
+      <section class="panel summary">
+        <h2>Your Bill (Next Page)</h2>
+        <div class="bill-paper">
+          <h3 class="bill-title">Grocery Bill</h3>
+          <p class="bill-meta"><span id="bill-date">-</span></p>
+          <div class="bill-table-wrap">
+            <table class="bill-table">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Qty</th>
+                  <th>Rate</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody id="bill-lines"></tbody>
+            </table>
+          </div>
+          <p class="bill-total-row">
+            <span>Total</span>
+            <strong id="bill-total">₹0.00</strong>
+          </p>
+          <p class="bill-thanks">Thank you for your purchase.</p>
+        </div>
+        <div class="actions no-print">
+          <button type="button" class="btn primary" id="btn-print">Print bill</button>
+          <button type="button" class="btn ghost" id="btn-back">Back to items</button>
+        </div>
+      </section>
+    </main>
+    <script src="bill.js"></script>
+  </body>
+</html>

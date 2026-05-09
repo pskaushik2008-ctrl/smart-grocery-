@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grocery Inventory — Items</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="brand">
+        <h1>Neighborhood Grocery</h1>
+        <p class="tagline">Prices from the database · Bill updates live · Print from the bill panel</p>
+        <nav class="site-nav no-print" aria-label="Pages">
+          <a href="/" class="nav-link nav-link-current" aria-current="page">Items</a>
+          <a href="/bill.html" class="nav-link">Bill preview</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel catalog" aria-labelledby="catalog-heading">
+        <h2 id="catalog-heading">Items</h2>
+        <p class="hint" id="load-status">Loading products…</p>
+        <div class="table-wrap">
+          <table class="items-table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Line total</th>
+              </tr>
+            </thead>
+            <tbody id="items-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel summary" aria-labelledby="summary-heading">
+        <h2 id="summary-heading">Your bill</h2>
+        <div class="totals">
+          <div class="row grand">
+            <span>Amount payable</span>
+            <strong id="grand-total">₹0.00</strong>
+          </div>
+        </div>
+        <div class="bill-paper" id="bill-preview">
+          <h3 class="bill-title">Grocery Bill</h3>
+          <p class="bill-meta"><span id="bill-date"></span></p>
+          <div class="bill-table-wrap">
+            <table class="bill-table">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Qty</th>
+                  <th>Rate</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody id="bill-lines"></tbody>
+            </table>
+          </div>
+          <p class="bill-total-row">
+            <span>Total</span>
+            <strong id="bill-total">₹0.00</strong>
+          </p>
+          <p class="bill-thanks">Thank you for your purchase.</p>
+        </div>
+        <div class="actions no-print">
+          <button type="button" class="btn ghost" id="btn-view-bill" disabled>Open bill page</button>
+          <button type="button" class="btn primary" id="btn-print" disabled>Print bill</button>
+          <button type="button" class="btn ghost" id="btn-clear">Clear quantities</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
